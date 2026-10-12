@@ -1,0 +1,385 @@
+/* ========================================
+   Colors (change the whole look from here)
+   ======================================== */
+:root {
+    --bg: #0a0a0a;        /* page background */
+    --card: #141414;      /* card background */
+    --border: #262626;
+    --text: #f5f5f5;
+    --muted: #a3a3a3;     /* grey text */
+    --accent: #4ade80;    /* green */
+}
+
+
+/* ========================================
+   Base Styles
+   ======================================== */
+* {
+    box-sizing: border-box;   /* padding stays inside the width */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;  /* smooth scroll when clicking nav links */
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+p {
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+h1 { font-size: 56px; }
+h2 { font-size: 34px; }
+h3 { font-size: 22px; }
+
+
+/* ========================================
+   Buttons
+   ======================================== */
+.btn {
+    display: inline-block;
+    margin: 20px 10px 0 0;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: black;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s;      /* hover animates smoothly */
+}
+
+.btn:hover {
+    transform: translateY(-3px);     /* moves up 3px on hover */
+}
+
+/* Outline button: transparent with a green border */
+.btn.outline {
+    background: transparent;
+    color: var(--accent);
+}
+
+.btn.small {
+    margin: 0;
+    padding: 6px 14px;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   Navigation
+   ======================================== */
+.navbar {
+    display: flex;                     /* puts logo and links in one row */
+    justify-content: space-between;    /* logo left, links right */
+    align-items: center;
+    padding: 16px 40px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;                  /* stays at the top while scrolling */
+    top: 0;
+    z-index: 10;                       /* stays above the other content */
+}
+
+.logo {
+    color: var(--accent);
+    font-family: "Courier New", monospace;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-links a.btn {
+    color: black;
+}
+
+
+/* ========================================
+   Hero Section
+   ======================================== */
+.hero {
+    display: flex;                     /* text and photo side by side */
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px 40px;
+}
+
+.hero-text {
+    max-width: 520px;
+    animation: fadeUp 0.8s ease;       /* slides up when the page loads */
+}
+
+.terminal {
+    color: var(--accent);
+    font-family: "Courier New", monospace;
+}
+
+/* The blinking underscore after "$ whoami" */
+.cursor {
+    animation: blink 1s infinite;
+}
+
+.role {
+    margin-top: 8px;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* Photo: the box is small and hides anything outside it.
+   The image inside is bigger, and the negative margin
+   moves it up so only my face and shirt are visible. */
+.photo-box {
+    width: 320px;
+    height: 400px;
+    flex-shrink: 0;                    /* box never gets squished */
+    overflow: hidden;                  /* hides the extra part of the image */
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    transition: transform 0.4s;
+}
+
+.photo-box:hover {
+    transform: translateY(-6px);
+}
+
+.photo-box img {
+    width: 720px;
+    margin-left: -10px;
+    margin-top: -365px;
+}
+
+
+/* ========================================
+   Stats
+   ======================================== */
+.stats {
+    display: grid;                           /* 3 equal columns */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 40px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;            /* number on top, text below */
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.stat strong {
+    color: var(--accent);
+    font-size: 28px;
+}
+
+.stat span {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* ========================================
+   Shared Section Styles
+   ======================================== */
+.section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.label {
+    color: var(--accent);
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+}
+
+.center {
+    text-align: center;
+}
+
+.small-text {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Two-column and three-column layouts using Grid */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.card {
+    padding: 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card > :first-child {
+    margin-top: 0;                     /* removes extra gap at the top of a card */
+}
+
+.card:hover {
+    transform: translateY(-5px);       /* card lifts up */
+    border-color: var(--accent);       /* border turns green */
+}
+
+
+/* ========================================
+   Skills
+   ======================================== */
+.pills {
+    display: flex;
+    flex-wrap: wrap;                   /* pills go to the next line if needed */
+    gap: 8px;
+    margin: 16px 0 6px;
+    list-style: none;
+}
+
+.pills li {
+    padding: 4px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    color: var(--accent);
+    font-size: 14px;
+}
+
+
+/* ========================================
+   Projects
+   ======================================== */
+.card.empty {
+    border-style: dashed;              /* dashed border = coming soon */
+    background: transparent;
+}
+
+
+/* ========================================
+   Education
+   ======================================== */
+/* Education uses the same .card style as the other sections */
+
+
+/* ========================================
+   Contact and Footer
+   ======================================== */
+.footer {
+    padding: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+
+/* ========================================
+   Animations
+   ======================================== */
+/* Starts 15px lower and invisible, ends in place and visible */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cursor disappears and appears */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+/* On screens 800px wide or smaller (tablet and phone) */
+@media (max-width: 800px) {
+
+    .navbar {
+        flex-direction: column;        /* logo on top, links below */
+        gap: 10px;
+        padding: 12px 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        flex-direction: column;        /* text on top, photo below */
+        padding: 40px 20px;
+    }
+
+    .stats,
+    .section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;    /* one column */
+    }
+
+    .stat {
+        padding: 14px 6px;
+    }
+
+    .stat strong {
+        font-size: 20px;
+    }
+
+    .stat span {
+        font-size: 12px;
+    }
+
+    h1 { font-size: 40px; }
+    h2 { font-size: 28px; }
+}
