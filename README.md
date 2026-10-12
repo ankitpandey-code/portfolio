@@ -8,7 +8,7 @@ It introduces me, my skills, my project, my education and how to contact me.
 I'm Ankit Pandey, a first-year Computer Science & AI student at Scaler School of Technology
 and BITS Pilani (Class of 2030), based in Bengaluru, India.
 
-**Live site:** https://ankitpandey-code.github.io/ankit-portfolio/
+**Live site:** https://ankitpandey-code.github.io/portfolio/
 
 ## Technologies
 
@@ -46,7 +46,7 @@ ankit-portfolio/
 My first project: a responsive personal portfolio built with HTML and CSS only.
 
 - GitHub: https://github.com/ankitpandey-code/ankit-portfolio
-- Live: https://ankitpandey-code.github.io/ankit-portfolio/
+- Live: https://ankitpandey-code.github.io/portfolio/
 
 ## How to Run
 
